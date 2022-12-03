@@ -1,0 +1,71 @@
+.dashboardContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: #fafafa;
+}
+.dashboard {
+  margin: 0 auto;
+  width: 90%;
+  background: #fafafa;
+  padding: 1rem;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/** ROLES **/
+
+.mainCardContainer {
+  width: 30rem;
+  height: 30rem;
+  background: #fff;
+  border-radius: 20px;
+  color: #22215b;
+  -webkit-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+}
+.roleGradient {
+  margin: 2rem auto;
+  width: 90%;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.mainCardTitle {
+  font-size: 2rem;
+  margin: 1rem 2rem;
+}
+.mainCardInfoContainer {
+  margin: 0 2rem;
+}
+.mainCardInfo {
+  text-indent: 0.4rem;
+  border: 1px solid #22215b;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.mainCardInfo > * {
+  width: 50%;
+}
