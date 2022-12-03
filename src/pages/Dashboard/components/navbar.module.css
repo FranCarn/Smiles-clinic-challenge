@@ -39,3 +39,17 @@
   height: 3rem;
   border-radius: 100%;
 }
+
+@media screen and (min-width: 700px) {
+  .profileContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profilePictureContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}

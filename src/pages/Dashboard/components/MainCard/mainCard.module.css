@@ -1,0 +1,137 @@
+.mainCardContainer {
+  margin-top: 4rem;
+  margin: auto;
+  width: 95%;
+  height: 32rem;
+  background: #fff;
+  border-radius: 20px;
+  color: #22215b;
+  -webkit-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.1);
+}
+.roleGradient {
+  margin: 2rem auto;
+  width: 90%;
+  height: 15rem;
+  border-radius: 20px;
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(148, 202, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.userGradient {
+  margin: 2rem auto;
+  width: 90%;
+  height: 15rem;
+  border-radius: 20px;
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(135, 134, 233, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(135, 134, 233, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(135, 134, 233, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.mainCardTitle {
+  font-size: 2rem;
+  margin: 1rem 2rem;
+}
+.mainCardInfoContainer {
+  margin: 0 2rem;
+}
+.mainCardInfo {
+  text-indent: 0.4rem;
+  border: 1px solid #22215b9a;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.mainCardInfo > * {
+  width: 50%;
+}
+
+.mainCardAddButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mainCardAddButton button {
+  color: #fff;
+  margin: 2rem;
+  background: #22215b;
+  height: 2.5rem;
+  width: 8rem;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 700px) {
+  .mainCardContainer {
+    margin: 2rem 0;
+    width: 35rem;
+    height: 32rem;
+  }
+  .roleGradient {
+    margin: 2rem auto;
+    width: 90%;
+    height: 15rem;
+    border-radius: 20px;
+  }
+  .userGradient {
+    margin: 2rem auto;
+    width: 90%;
+    height: 15rem;
+    border-radius: 20px;
+  }
+  .mainCardTitle {
+    font-size: 2rem;
+    margin: 1rem 2rem;
+  }
+  .mainCardInfoContainer {
+    margin: 0 2rem;
+  }
+  .mainCardInfo {
+    text-indent: 0.4rem;
+    border: 1px solid #22215b9a;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .mainCardInfo > * {
+    width: 50%;
+  }
+
+  .mainCardAddButton {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mainCardAddButton button {
+    color: #fff;
+    margin: 2rem;
+    background: #22215b;
+    height: 2.5rem;
+    width: 8rem;
+  }
+}

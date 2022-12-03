@@ -1,7 +1,5 @@
 .sidebarContainer {
-  position: fixed;
-  height: 100%;
-  width: 5rem;
+  width: 7rem;
   padding: 3rem 0;
   background: #ffffff;
   display: flex;
@@ -22,7 +20,26 @@
   width: 15rem;
   transition: all 0.2s;
 }
-
 .showlogoutText {
   display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .sidebarContainer {
+    position: fixed;
+    height: 100%;
+    width: 5rem;
+    padding: 3rem 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebarOpen {
+    padding: 3rem 1rem;
+    align-items: flex-end;
+    width: 15rem;
+    transition: all 0.2s;
+  }
 }

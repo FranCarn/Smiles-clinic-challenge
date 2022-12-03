@@ -12,3 +12,6 @@
 button {
   cursor: pointer;
 }
+button:hover {
+  scale: 1.03;
+}
