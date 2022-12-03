@@ -11,7 +11,9 @@
 }
 button {
   cursor: pointer;
+  background: none;
 }
 button:hover {
   scale: 1.03;
+  transition: all 0.2s ease-in-out;
 }

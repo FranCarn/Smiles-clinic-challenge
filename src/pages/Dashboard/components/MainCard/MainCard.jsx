@@ -1,4 +1,5 @@
 import React from "react";
+import { CardModal } from "./components/CardModal/CardModal";
 import { Gradient } from "./components/Gradient";
 import styles from "./mainCard.module.css";
 
@@ -24,9 +25,7 @@ export const MainCard = ({ title, listTitle, buttonText }) => {
         </div>
       </div>
       <div className={styles.mainCardAddButton}>
-        <button>
-          <span>+ {buttonText}</span>
-        </button>
+        <CardModal buttonText={buttonText} title={title} />
       </div>
     </div>
   );

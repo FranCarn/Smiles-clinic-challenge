@@ -1,0 +1,45 @@
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+}
+.modalTitle span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #22215b;
+}
+.modalButtonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.modalButtonGroup button {
+  width: 50%;
+}
+.modalSaveButton {
+  background-color: #22215b;
+  border-radius: 20px;
+  padding: 1rem 5.5rem;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.modalCancelButton {
+  color: #22215b;
+}
+.modalInputContainer {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.modalInputContainer label {
+  margin-bottom: 0.3rem;
+}
+.modalInput[type="date"] {
+  text-indent: 0.5rem;
+}
+.modalInput {
+  text-indent: 1rem;
+  border: 1px solid black;
+  height: 2.3rem;
+  border-radius: 0.2rem;
+  margin-bottom: 1.2rem;
+}
