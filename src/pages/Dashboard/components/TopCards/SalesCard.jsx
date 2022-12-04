@@ -9,7 +9,7 @@ export const SalesCard = () => {
         <div>On going sales</div>
       </div>
       <div>
-        <div>FLECHITA</div>
+        <i className="fa-solid fa-arrow-up fa-xl" />
         <div>+90%</div>
       </div>
     </div>

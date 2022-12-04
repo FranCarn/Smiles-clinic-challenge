@@ -1,10 +1,14 @@
 import React from "react";
+import { useLogin } from "./hooks/useLogin";
 import styles from "./login.module.css";
 export const Login = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("enviado");
-  };
+  const {
+    handleShowPassword,
+    handleSubmit,
+    handleInputChange,
+    email,
+    password,
+  } = useLogin();
 
   return (
     <div className={styles.background}>
@@ -21,22 +25,37 @@ export const Login = () => {
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="youremail@example.com"
                 required
+                value={email}
+                onChange={(e) => handleInputChange(e)}
+                maxLength={50}
+                minLength={7}
               />
             </div>
             <div className={styles.inputContainer}>
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="****************"
-                required
-              />
+              <div className={styles.passwordContainer}>
+                <input
+                  type={!showPassword ? "password" : "text"}
+                  id="password"
+                  placeholder="****************"
+                  required
+                  name="password"
+                  value={password}
+                  onChange={(e) => handleInputChange(e)}
+                  maxLength={30}
+                  minLength={7}
+                />
+                <button onClick={(e) => handleShowPassword(e)}>
+                  <i className="fa-solid fa-eye-slash" />
+                </button>
+              </div>
+              <button className={styles.loginButton} type="submit">
+                Log in
+              </button>
             </div>
-            <button className={styles.loginButton} type="submit">
-              Log in
-            </button>
           </form>
         </div>
       </div>

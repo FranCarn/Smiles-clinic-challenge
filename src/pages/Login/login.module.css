@@ -59,7 +59,20 @@ hgroup h3 {
   color: #fff;
   margin-top: 40px;
 }
-
+.passwordContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.passwordContainer input {
+  width: 100%;
+  position: relative;
+}
+.passwordContainer button {
+  color: #22215b;
+  position: absolute;
+  right: 1rem;
+}
 @media screen and (min-width: 700px) {
   .background {
     background: linear-gradient(

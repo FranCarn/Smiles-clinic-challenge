@@ -1,16 +1,17 @@
 import React from "react";
+import { Clock } from "../../../../components/Clock";
 import styles from "./cards.module.css";
+import moment from "moment";
+import { Weather } from "../../../../components/Weather";
+
 export const DateCard = () => {
   return (
     <div className={styles.cardContainer}>
       <div>
-        <div className={styles.cardTitle}>08:23AM</div>
-        <div>October 12 | wed</div>
+        <Clock style={styles.cardTitle} />
+        <div>{moment().format("MMMM D | ddd")}</div>
       </div>
-      <div>
-        <div className={styles.weatherTitle}>12° C</div>
-        <div>Buenos Aires</div>
-      </div>
+      <Weather style={styles.weatherTitle} />
     </div>
   );
 };

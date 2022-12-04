@@ -18,14 +18,26 @@
   font-weight: 700;
   color: #22215b;
 }
+
 .weatherTitle {
   font-size: 1.5rem;
   font-weight: 700;
   color: #22215b;
 }
 
-.cardContainer:hover {
-  scale: 1.01;
+.cardArrow {
+  color: #22215b;
+}
+
+.cardWeatherIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.cardWeatherContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 @media screen and (min-width: 700px) {

@@ -1,41 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
+import { RoleModal } from "./RoleModal";
+import { UserModal } from "./UserModal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useCardModal } from "../../../hooks/useCardModal";
 import styles from "./cardModal.module.css";
-import { RoleModal } from "./components/RoleModal";
-import { UserModal } from "./components/UserModal";
+
 export const CardModal = ({ buttonText, title }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  let modalTitle = title.substr(0, title.length - 1);
-  const handleSave = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      padding: "25px 35px",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      backgroundColor: "#fafafa",
-      maxHeight: "90%",
-      maxWidth: "90%",
-      width: "25rem",
-      borderRadius: "20px",
-    },
-    overlay: {
-      zIndex: 100,
-      backgroundColor: "rgba(70, 70, 70, 0.5)",
-    },
-  };
-  Modal.setAppElement("#root");
+  const {
+    handleSave,
+    handleCancel,
+    setIsModalOpen,
+    isModalOpen,
+    customStyles,
+    modalTitle,
+  } = useCardModal({ title });
   return (
     <>
       <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={11}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover={false}
+          theme="light"
+          limit={3}
+        />
         <div>
           <button onClick={() => setIsModalOpen(!isModalOpen)}>
-            {buttonText}
+            <span>+ {buttonText}</span>
           </button>
         </div>
         <Modal
@@ -43,8 +42,8 @@ export const CardModal = ({ buttonText, title }) => {
           onRequestClose={() => setIsModalOpen(!isModalOpen)}
           style={customStyles}
         >
-          <div className={styles.modalTitle}>
-            <span>New {modalTitle}</span>
+          <div className={styles.modalTitleContainer}>
+            <span className={styles.title}>New {modalTitle}</span>
             <button onClick={() => setIsModalOpen(!isModalOpen)}>
               <i className="fa-solid fa-x" />
             </button>
@@ -55,7 +54,7 @@ export const CardModal = ({ buttonText, title }) => {
           <div className={styles.modalButtonGroup}>
             <button
               className={styles.modalCancelButton}
-              onClick={() => setIsModalOpen(!isModalOpen)}
+              onClick={() => handleCancel()}
             >
               Cancel
             </button>

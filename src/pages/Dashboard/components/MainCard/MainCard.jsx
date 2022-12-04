@@ -1,9 +1,9 @@
 import React from "react";
-import { CardModal } from "./components/CardModal/CardModal";
-import { Gradient } from "./components/Gradient";
+import { CardModal } from "./CardModal/CardModal";
+import { Gradient } from "./Gradient";
 import styles from "./mainCard.module.css";
 
-export const MainCard = ({ title, listTitle, buttonText }) => {
+export const MainCard = ({ title, listTitle, buttonText, list }) => {
   return (
     <div className={styles.mainCardContainer}>
       {title === "Users" ? (
@@ -19,10 +19,12 @@ export const MainCard = ({ title, listTitle, buttonText }) => {
         </div>
       </div>
       <div className={styles.mainCardInfoContainer}>
-        <div className={styles.mainCardInfo}>
-          <span>Admin</span>
-          <span>99/9/9</span>
-        </div>
+        {list?.map((item) => (
+          <div className={styles.mainCardInfo}>
+            <span>{item.name}</span>
+            <span>{item.created}</span>
+          </div>
+        ))}
       </div>
       <div className={styles.mainCardAddButton}>
         <CardModal buttonText={buttonText} title={title} />
@@ -30,5 +32,3 @@ export const MainCard = ({ title, listTitle, buttonText }) => {
     </div>
   );
 };
-
-// TODO tiene que recibir un array para poder mostrar los roles y tmbn para los usuarios entonces con ese arr se mapea y ta

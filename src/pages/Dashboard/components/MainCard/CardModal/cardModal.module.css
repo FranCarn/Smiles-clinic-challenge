@@ -1,8 +1,8 @@
-.modalTitle {
+.modalTitleContainer {
   display: flex;
   justify-content: space-between;
 }
-.modalTitle span {
+.title {
   font-size: 1.3rem;
   font-weight: 700;
   color: #22215b;
@@ -42,4 +42,10 @@
   height: 2.3rem;
   border-radius: 0.2rem;
   margin-bottom: 1.2rem;
+}
+.modalSelectRoles {
+  background: #eff3f8;
+  height: 2.5rem;
+  margin: 1rem 0;
+  text-indent: 0.5rem;
 }

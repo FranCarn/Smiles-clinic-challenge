@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../cardModal.module.css";
+import styles from "./cardModal.module.css";
 export const RoleModal = () => {
   return (
     <div className={styles.modalInputContainer}>
