@@ -1,16 +1,72 @@
 .sidebarContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.sidebarOpen {
+  width: 90vw;
+  transition: all 0.2s;
+  height: 100%;
+  position: fixed;
+  padding: 3rem 0;
+  top: 0;
+  left: 0;
+  background: #a7a7a7;
+}
+
+.showText {
   display: none;
 }
 
-.showlogoutText {
+.sidebarTopButtons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+.sidebarTopButtons > * {
+  margin: auto;
+}
+
+.sidebarBottomButtons {
   display: none;
 }
 
+.sidebarOpen .sidebarBottomButtons {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 15px;
+  justify-content: space-around;
+}
+
+.brandTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #22215b;
+}
+.sidebarOpen .logoutContainer {
+  padding: 0.5rem 0;
+  border: solid 1px red;
+}
+.sidebarOpen .logoutContainer:hover {
+  background-color: red;
+}
+.sidebarOpen .logoutContainer:hover > * {
+  color: #ffffff;
+}
 @media screen and (min-width: 700px) {
   .sidebarContainer {
     position: fixed;
+    left: 0;
+    top: 0;
     height: 100%;
-    width: 7rem;
+    width: 4.5rem;
     padding: 3rem 0;
     background: #ffffff;
     display: flex;
@@ -25,7 +81,18 @@
   .sidebarOpen {
     padding: 3rem 1rem;
     align-items: flex-end;
-    width: 15rem;
+    width: 14rem;
     transition: all 0.2s;
+  }
+  .sidebarOpen .logoutContainer > * {
+    color: red;
+  }
+  .sidebarBottomButtons {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: space-around;
   }
 }

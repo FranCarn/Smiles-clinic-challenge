@@ -1,8 +1,10 @@
 import React from "react";
+import { Sidebar } from "../Sidebar/Sidebar";
 import styles from "./navbar.module.css";
 export const Navbar = () => {
   return (
     <div className={styles.navbar}>
+      <Sidebar />
       <div className={styles.titleContainer}>
         <h3>Welcome back!</h3>
         <h1>Dashboard</h1>

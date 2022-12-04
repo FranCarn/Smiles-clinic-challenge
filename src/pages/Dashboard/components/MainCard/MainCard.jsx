@@ -1,10 +1,10 @@
 import React from "react";
-import { Loader } from "../../../../components/Loader";
-import { CardModal } from "./CardModal/CardModal";
+import { CreateRole } from "../../../../modals/CreateRole";
+import { CreateUser } from "../../../../modals/CreateUser";
 import { Gradient } from "./Gradient";
 import styles from "./mainCard.module.css";
 
-export const MainCard = ({ title, listTitle, buttonText, list }) => {
+export const MainCard = ({ title, listTitle, list, getData, roleList }) => {
   return (
     <div className={styles.mainCardContainer}>
       {title === "Users" ? (
@@ -20,15 +20,19 @@ export const MainCard = ({ title, listTitle, buttonText, list }) => {
         </div>
       </div>
       <div className={styles.mainCardInfoContainer}>
-        {list?.map((item) => (
-          <div key={item.name} className={styles.mainCardInfo}>
-            <span>{item.name}</span>
+        {list?.map((item, index) => (
+          <div key={index} className={styles.mainCardInfo}>
+            <span>{item.fullName || item.englishRole}</span>
             <span>{item.created}</span>
           </div>
         ))}
       </div>
       <div className={styles.mainCardAddButton}>
-        <CardModal buttonText={buttonText} title={title} />
+        {title === "Users" ? (
+          <CreateUser getData={getData} roleList={roleList} />
+        ) : (
+          <CreateRole getData={getData} />
+        )}
       </div>
     </div>
   );

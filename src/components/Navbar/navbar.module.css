@@ -7,24 +7,14 @@
 }
 
 .titleContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.titleContainer h1 {
-  font-size: 2rem;
-  color: #22215b;
-}
-
-.titleContainer h3 {
-  font-size: 0.75rem;
-  color: #8080a0;
+  display: none;
 }
 
 .profileContainer {
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: #8080a0;
 }
 
 .profilePictureContainer {
@@ -35,16 +25,11 @@
 
 .profilePicture {
   background: #d414d4;
-  width: 3rem;
-  height: 3rem;
+  width: 1.3rem;
+  height: 1.3rem;
   border-radius: 100%;
 }
-.titleContainer h1 {
-  font-size: 1.5rem;
-}
-.titleContainer h3 {
-  font-size: 0.7rem;
-}
+
 .profileContainer {
   display: flex;
   align-items: center;
@@ -57,10 +42,21 @@
   gap: 0.3rem;
 }
 @media screen and (min-width: 700px) {
+  .titleContainer {
+    display: block;
+  }
   .titleContainer h1 {
     font-size: 2.5rem;
+    color: #22215b;
   }
   .titleContainer h3 {
     font-size: 1rem;
+    color: #8080a0;
+  }
+  .profilePicture {
+    background: #d414d4;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
   }
 }

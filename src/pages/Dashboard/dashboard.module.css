@@ -1,3 +1,18 @@
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer h1 {
+  font-size: 2rem;
+  color: #22215b;
+}
+
+.titleContainer h3 {
+  font-size: 0.75rem;
+  color: #8080a0;
+}
+
 .cardsContainer {
   display: flex;
   flex-direction: column;
@@ -6,6 +21,9 @@
 }
 
 @media screen and (min-width: 700px) {
+  .titleContainer {
+    display: none;
+  }
   .cardsContainer {
     flex-direction: row;
     justify-content: space-between;

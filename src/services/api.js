@@ -22,6 +22,14 @@ export const getAllUsers = async () => {
 };
 
 export const saveNewUser = async (userInfo) => {
+  console.log(userInfo);
+  if (
+    userInfo.fullName ||
+    userInfo.country ||
+    userInfo.email ||
+    userInfo.password === ""
+  )
+    return false;
   try {
     const res = await axios.post(
       `${import.meta.env.VITE_BASEURL + "/users"}`,
@@ -35,6 +43,7 @@ export const saveNewUser = async (userInfo) => {
 
 export const saveNewRole = async (roleInfo) => {
   try {
+    if (roleInfo.englishRole || roleInfo.spanishRole === "") return false;
     const res = await axios.post(
       `${import.meta.env.VITE_BASEURL + "/roles"}`,
       roleInfo
@@ -44,6 +53,7 @@ export const saveNewRole = async (roleInfo) => {
     console.log(error);
   }
 };
+
 export const getAllRoles = async () => {
   try {
     const res = await axios.get(`${import.meta.env.VITE_BASEURL + "/roles"}`);

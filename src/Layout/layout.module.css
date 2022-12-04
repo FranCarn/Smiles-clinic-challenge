@@ -1,8 +1,6 @@
 .layoutContainer {
-  height: 100vh;
+  height: 100%;
   background: #fafafa;
-  display: flex;
-  width: auto;
 }
 
 .layout {
@@ -10,10 +8,12 @@
   background: #fafafa;
   padding: 1rem 0.5rem;
   width: 95%;
+  height: 100%;
 }
 
 @media screen and (min-width: 700px) {
   .layout {
     width: 85%;
+    height: 100%;
   }
 }

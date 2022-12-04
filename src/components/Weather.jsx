@@ -32,7 +32,7 @@ export const Weather = () => {
           {Math.round(weatherState.main.temp)}°
         </div>
       </div>
-      <div>{weatherState.name}</div>
+      <span className={styles.cardWeatherName}>{weatherState.name}</span>
     </div>
   );
 };

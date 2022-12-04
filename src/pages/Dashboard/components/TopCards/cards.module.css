@@ -38,6 +38,7 @@
 .cardWeatherContainer {
   display: flex;
   align-items: flex-end;
+  margin: -1.5rem 0;
 }
 
 .rightIcons {
@@ -51,8 +52,5 @@
   .cardContainer {
     height: 9rem;
     padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 }

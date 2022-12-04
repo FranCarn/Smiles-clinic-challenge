@@ -6,7 +6,7 @@ import styles from "./layout.module.css";
 export const Layout = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className={styles.layout}>
         <Navbar />
         {children}

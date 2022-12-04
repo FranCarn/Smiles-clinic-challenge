@@ -118,7 +118,6 @@
   .mainCardInfo {
     text-indent: 0.4rem;
     border: 1px solid #22215b9a;
-    height: 2rem;
     display: flex;
     align-items: center;
   }
