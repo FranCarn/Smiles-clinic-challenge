@@ -1,5 +1,6 @@
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
+import { getAllRoles } from "../../../services/api";
 
 export const useUserModal = () => {
   const [userInfo, setUserInfo] = useState({
@@ -11,15 +12,24 @@ export const useUserModal = () => {
     selectRoles: "patient",
     created: moment().format("DD-MM-YYYY"),
   });
+  const [roles, setRoles] = useState([]);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setUserInfo({ ...userInfo, [name]: value });
   };
 
+  useEffect(() => {
+    const roleList = async () => {
+      const res = await getAllRoles();
+      setRoles(res);
+    };
+    roleList();
+  }, []);
+
   return {
     handleChange,
-    ...userInfo,
     userInfo,
+    roles,
   };
 };

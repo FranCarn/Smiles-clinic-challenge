@@ -9,7 +9,8 @@ import styles from "./cardModal.module.css";
 
 export const CardModal = ({ buttonText, title }) => {
   const {
-    handleSave,
+    handleSaveNewUser,
+    handleSaveNewRole,
     handleCancel,
     setIsModalOpen,
     isModalOpen,
@@ -50,9 +51,15 @@ export const CardModal = ({ buttonText, title }) => {
           </div>
           <div className={styles.modalBody}>
             {modalTitle === "User" ? (
-              <UserModal handleCancel={handleCancel} handleSave={handleSave} />
+              <UserModal
+                handleCancel={handleCancel}
+                handleSaveNewUser={handleSaveNewUser}
+              />
             ) : (
-              <RoleModal handleCancel={handleCancel} handleSave={handleSave} />
+              <RoleModal
+                handleCancel={handleCancel}
+                handleSaveNewRole={handleSaveNewRole}
+              />
             )}
           </div>
         </Modal>

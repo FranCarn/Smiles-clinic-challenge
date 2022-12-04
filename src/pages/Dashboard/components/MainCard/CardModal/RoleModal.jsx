@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "./cardModal.module.css";
-export const RoleModal = ({ handleCancel, handleSave }) => {
-  const [userInfo, setUserInfo] = useState({
+export const RoleModal = ({ handleCancel, handleSaveNewRole }) => {
+  const [roleInfo, setRoleInfo] = useState({
     englishRole: "",
     spanishRole: "",
   });
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    setUserInfo({ ...userInfo, [name]: value });
+    setRoleInfo({ ...roleInfo, [name]: value });
   };
 
   return (
-    <form onSubmit={(e) => handleSave(e)}>
+    <form onSubmit={(event) => handleSaveNewRole(event, roleInfo)}>
       <div className={styles.modalInputContainer}>
         <label htmlFor="englishRole">Role Name (english)</label>
         <input
@@ -20,19 +20,19 @@ export const RoleModal = ({ handleCancel, handleSave }) => {
           id="englishRole"
           placeholder="Admin"
           name="englishRole"
-          value={userInfo.englishRole}
+          value={roleInfo.englishRole}
           className={styles.modalInput}
-          onChange={(e) => handleChange(e)}
+          onChange={(event) => handleChange(event)}
         />
         <label htmlFor="spanishRole">Role Name (spanish)</label>
         <input
           type="text"
           id="spanishRole"
           name="spanishRole"
-          value={userInfo.spanishRole}
+          value={roleInfo.spanishRole}
           placeholder="Admin"
           className={styles.modalInput}
-          onChange={(e) => handleChange(e)}
+          onChange={(event) => handleChange(event)}
         />
       </div>
       <div className={styles.modalButtonGroup}>

@@ -1,15 +1,32 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import { toast } from "react-toastify";
-import { saveNewUser } from "../../../services/api";
+import { saveNewRole, saveNewUser } from "../../../services/api";
 
 export const useCardModal = ({ title }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   let modalTitle = title.substr(0, title.length - 1);
 
-  const handleSave = async (userInfo, e) => {
-    e.preventDefault();
+  const handleSaveNewUser = async (event, userInfo) => {
+    event.preventDefault();
     await saveNewUser(userInfo);
+    toast.success(`${modalTitle} saved!`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      closeButton: false,
+    });
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const handleSaveNewRole = async (event, roleInfo) => {
+    event.preventDefault();
+    await saveNewRole(roleInfo);
     toast.success(`${modalTitle} saved!`, {
       position: "top-right",
       autoClose: 1000,
@@ -61,7 +78,8 @@ export const useCardModal = ({ title }) => {
   Modal.setAppElement("#root");
 
   return {
-    handleSave,
+    handleSaveNewUser,
+    handleSaveNewRole,
     handleCancel,
     setIsModalOpen,
     isModalOpen,

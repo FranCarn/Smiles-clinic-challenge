@@ -82,9 +82,12 @@
   color: #fff;
   margin: 2rem;
   background: #22215b;
-  height: 2.5rem;
-  width: 8rem;
-  border-radius: 15px;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 10px;
+}
+.mainCardAddButton button span {
+  font-size: 0.85rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -121,6 +124,7 @@
   }
 
   .mainCardInfo > * {
+    font-size: 1rem;
     width: 50%;
   }
 
@@ -135,5 +139,8 @@
     background: #22215b;
     height: 2.5rem;
     width: 8rem;
+  }
+  .mainCardAddButton button span {
+    font-size: 1rem;
   }
 }

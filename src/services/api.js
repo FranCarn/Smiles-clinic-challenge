@@ -33,6 +33,26 @@ export const saveNewUser = async (userInfo) => {
   }
 };
 
+export const saveNewRole = async (roleInfo) => {
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_BASEURL + "/roles"}`,
+      roleInfo
+    );
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getAllRoles = async () => {
+  try {
+    const res = await axios.get(`${import.meta.env.VITE_BASEURL + "/roles"}`);
+    return res.data;
+  } catch (error) {
+    return ["No roles created"];
+  }
+};
+
 export const getWeather = async (lat, lon) => {
   const baseURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=sp&units=metric&appid=${
     import.meta.env.VITE_WEATHER_API_KEY
