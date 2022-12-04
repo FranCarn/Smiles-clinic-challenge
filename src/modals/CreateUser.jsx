@@ -5,32 +5,24 @@ import { toastError, toastSuccess } from "../utilities/toast";
 import { customStyles } from "../utilities/modalCustomStyles";
 import styles from "./cardModal.module.css";
 import { saveNewUser } from "../services/api";
+import { validateUser } from "../utilities/validation";
 
 export const CreateUser = ({ getData, roleList }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [userInfo, setUserInfo] = useState({
-    fullName: "",
-    country: "",
-    birthDate: "1999-05-17",
-    email: "",
-    password: "",
-    selectRoles: "patient",
-    created: moment().format("DD-MM-YYYY"),
-  });
+  const [userInfo, setUserInfo] = useState({});
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    setUserInfo({ ...userInfo, [name]: value });
+    setUserInfo({ ...userInfo, [name.toUpperCase()]: value.toUpperCase() });
   };
 
   const handleSaveNewUser = async (event, userInfo) => {
     event.preventDefault();
-    const res = await saveNewUser(userInfo);
-    if (!res) return toastError("All fields are required");
+    if (validateUser(userInfo)) return toastError("All fields are required");
+    await saveNewUser({ ...userInfo, created: moment().format("DD-MM-YYYY") });
     await getData();
-    toastSuccess("User");
     setIsModalOpen(!isModalOpen);
+    toastSuccess("User");
   };
 
   const handleCancel = () => {
@@ -130,12 +122,15 @@ export const CreateUser = ({ getData, roleList }) => {
                 onChange={(event) => handleChange(event)}
                 required
               >
+                <option value={null} selected="true" disabled="disabled">
+                  Select role
+                </option>
                 {roleList?.map((item, index) => (
                   <option
                     key={index}
-                    value={item.englishRole || item.spanishRole}
+                    value={item.ENGLISHROLE || item.SPANISHROLE}
                   >
-                    {`${item.englishRole} (${item.spanishRole})`}
+                    {`${item.ENGLISHROLE} (${item.SPANISHROLE})`}
                   </option>
                 ))}
               </select>

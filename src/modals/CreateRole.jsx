@@ -5,31 +5,30 @@ import moment from "moment";
 import { saveNewRole } from "../services/api";
 import { toastError, toastSuccess } from "../utilities/toast";
 import { customStyles } from "../utilities/modalCustomStyles";
+import { validateRole } from "../utilities/validation";
 
 export const CreateRole = ({ getData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [roleInfo, setRoleInfo] = useState({
-    englishRole: "",
-    spanishRole: "",
     created: moment().format("DD-MM-YYYY"),
   });
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    setRoleInfo({ ...roleInfo, [name]: value });
+    setRoleInfo({ ...roleInfo, [name.toUpperCase()]: value.toUpperCase() });
   };
 
   const handleSaveNewRole = async (event, roleInfo) => {
     event.preventDefault();
-    const res = await saveNewRole(roleInfo);
-    if (!res) return toastError("All fields are required");
+    if (validateRole(roleInfo)) return toastError("All fields are required");
+    await saveNewRole(roleInfo);
     await getData();
-    toastSuccess("Role");
     setIsModalOpen(!isModalOpen);
+    toastSuccess("Role");
   };
+
   const handleCancel = () => {
     toastError("Role creation canceled...");
-    setIsModalOpen(!isModalOpen);
   };
 
   return (

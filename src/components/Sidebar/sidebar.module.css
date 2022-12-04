@@ -14,7 +14,7 @@
   padding: 3rem 0;
   top: 0;
   left: 0;
-  background: #a7a7a7;
+  background: #deecff;
 }
 
 .showText {
@@ -94,5 +94,8 @@
     align-items: center;
     border-radius: 15px;
     justify-content: space-around;
+  }
+  .sidebarBottomButtons:disabled {
+    background: none;
   }
 }

@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./routes/AppRouter";
-import "./index.module.css";
 import Modal from "react-modal";
+import "./index.module.css";
 
 Modal.setAppElement("#root");
 

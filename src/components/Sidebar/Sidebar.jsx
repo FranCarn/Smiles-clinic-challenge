@@ -13,7 +13,7 @@ export const Sidebar = () => {
           Smiles clinic panel
         </span>
         <button onClick={() => setIsOpen(!isOpen)}>
-          <i className="fa-solid fa-bars" />
+          <i className="fa-solid fa-bars fa-xl" />
         </button>
       </div>
 

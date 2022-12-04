@@ -4,7 +4,7 @@ import { AuthContext } from "../../../auth/context/AuthContext";
 import { validLogin } from "../../../services/api";
 
 export const useLogin = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ password: "", email: "" });
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useContext(AuthContext);
 
@@ -23,14 +23,15 @@ export const useLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await validLogin(formState);
-    if (res) login(res[0]._id, res[0].role);
+    if (res) return login(res[0]._id, res[0].SELECTROLES);
     toast.error("Usuario o contraseña incorrecta");
   };
+
   return {
     handleShowPassword,
     handleSubmit,
     handleInputChange,
-    ...formState,
+    formState,
     showPassword,
   };
 };

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { CreateRole } from "../../../../modals/CreateRole";
 import { CreateUser } from "../../../../modals/CreateUser";
 import { Gradient } from "./Gradient";
 import styles from "./mainCard.module.css";
 
-export const MainCard = ({ title, listTitle, list, getData, roleList }) => {
+export const MainCard = ({
+  title,
+  listTitle,
+  list,
+  getData,
+  roleList,
+  type,
+}) => {
+  const [isCreating, setIsCreating] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   return (
     <div className={styles.mainCardContainer}>
       {title === "Users" ? (
@@ -22,16 +31,32 @@ export const MainCard = ({ title, listTitle, list, getData, roleList }) => {
       <div className={styles.mainCardInfoContainer}>
         {list?.map((item, index) => (
           <div key={index} className={styles.mainCardInfo}>
-            <span>{item.fullName || item.englishRole}</span>
+            <span>{item.FULLNAME || item.ENGLISHROLE}</span>
             <span>{item.created}</span>
           </div>
         ))}
       </div>
+
       <div className={styles.mainCardAddButton}>
-        {title === "Users" ? (
-          <CreateUser getData={getData} roleList={roleList} />
-        ) : (
-          <CreateRole getData={getData} />
+        {type === "createUsers" && (
+          <CreateUser
+            getData={getData}
+            roleList={roleList}
+            isCreating={isCreating}
+            setIsCreating={setIsCreating}
+            isSaving={isSaving}
+            setIsSaving={setIsSaving}
+          />
+        )}
+
+        {type === "createRoles" && (
+          <CreateRole
+            getData={getData}
+            isCreating={isCreating}
+            setIsCreating={setIsCreating}
+            isSaving={isSaving}
+            setIsSaving={setIsSaving}
+          />
         )}
       </div>
     </div>

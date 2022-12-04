@@ -3,12 +3,10 @@ import { MainCard } from "./components/MainCard/MainCard";
 import { UsersCard, SalesCard, DateCard } from "./components/TopCards";
 import { useDashboardData } from "./hooks/useDashboardData";
 import styles from "./dashboard.module.css";
+import { DashboardInformation } from "./components/DashboardInformation/DashboardInformation";
 
 export const Dashboard = () => {
-  // const { getData, userList, roleList } = useDashboardData();
-  let userList = null;
-  let roleList = null;
-  let getData = null;
+  const { getData, userList, roleList } = useDashboardData();
   return (
     <>
       <div className={styles.titleContainer}>
@@ -21,20 +19,10 @@ export const Dashboard = () => {
         <UsersCard totalUsers={userList?.length} />
       </div>
       <div className={styles.cardsContainer}>
-        <MainCard
-          title={"Roles"}
-          listTitle={"ROLE NAME"}
-          buttonText={"Add role"}
-          list={roleList}
+        <DashboardInformation
           getData={getData}
-        />
-        <MainCard
-          title={"Users"}
-          listTitle={"FULL NAME"}
-          buttonText={"Add user"}
-          list={userList}
+          userList={userList}
           roleList={roleList}
-          getData={getData}
         />
       </div>
     </>

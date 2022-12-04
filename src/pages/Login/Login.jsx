@@ -7,8 +7,7 @@ export const Login = () => {
     handleShowPassword,
     handleSubmit,
     handleInputChange,
-    email,
-    password,
+    formState,
     showPassword,
   } = useLogin();
 
@@ -43,7 +42,7 @@ export const Login = () => {
                 name="email"
                 placeholder="youremail@example.com"
                 required
-                value={email}
+                value={formState.email}
                 onChange={(e) => handleInputChange(e)}
                 maxLength={50}
                 minLength={7}
@@ -58,12 +57,12 @@ export const Login = () => {
                   placeholder="****************"
                   required
                   name="password"
-                  value={password}
+                  value={formState.password}
                   onChange={(e) => handleInputChange(e)}
                   maxLength={30}
                   minLength={7}
                 />
-                <button onClick={() => handleShowPassword()}>
+                <button type="reset" onClick={() => handleShowPassword()}>
                   <i className="fa-solid fa-eye-slash" />
                 </button>
               </div>

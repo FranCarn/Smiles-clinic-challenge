@@ -35,3 +35,7 @@ button:hover {
   border-radius: 10px;
   overflow: hidden;
 }
+button:disabled {
+  scale: 1;
+  background-color: lightgray;
+}

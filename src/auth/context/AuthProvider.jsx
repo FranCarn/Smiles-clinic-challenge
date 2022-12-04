@@ -43,5 +43,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 AuthProvider.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 };
