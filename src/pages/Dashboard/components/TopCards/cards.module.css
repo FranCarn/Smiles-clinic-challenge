@@ -1,7 +1,8 @@
 .cardContainer {
   width: 95%;
-  height: 9rem;
-  padding: 0 2rem;
+  height: 6.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
   background: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -37,12 +38,17 @@
 .cardWeatherContainer {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+}
+
+.rightIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem 0;
 }
 
 @media screen and (min-width: 700px) {
   .cardContainer {
-    width: 25rem;
     height: 9rem;
     padding: 0 2rem;
     display: flex;

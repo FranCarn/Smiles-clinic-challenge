@@ -1,12 +1,15 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import { toast } from "react-toastify";
+import { saveNewUser } from "../../../services/api";
 
 export const useCardModal = ({ title }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   let modalTitle = title.substr(0, title.length - 1);
 
-  const handleSave = () => {
+  const handleSave = async (userInfo, e) => {
+    e.preventDefault();
+    await saveNewUser(userInfo);
     toast.success(`${modalTitle} saved!`, {
       position: "top-right",
       autoClose: 1000,

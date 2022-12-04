@@ -11,7 +11,7 @@ export const DateCard = () => {
         <Clock style={styles.cardTitle} />
         <div>{moment().format("MMMM D | ddd")}</div>
       </div>
-      <Weather style={styles.weatherTitle} />
+      <Weather />
     </div>
   );
 };

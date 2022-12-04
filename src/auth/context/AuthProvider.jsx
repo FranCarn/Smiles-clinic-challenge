@@ -14,9 +14,10 @@ const init = () => {
 export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(authReducer, {}, init);
 
-  const login = ({ id }) => {
+  const login = (id, role) => {
     const user = {
       id,
+      role,
     };
 
     const action = {

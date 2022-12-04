@@ -1,3 +1,4 @@
+import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 
 export const useUserModal = () => {
@@ -8,11 +9,8 @@ export const useUserModal = () => {
     email: "",
     password: "",
     selectRoles: "patient",
+    created: moment().format("DD-MM-YYYY"),
   });
-
-  useEffect(() => {
-    console.log(userInfo);
-  }, [userInfo]);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -22,5 +20,6 @@ export const useUserModal = () => {
   return {
     handleChange,
     ...userInfo,
+    userInfo,
   };
 };

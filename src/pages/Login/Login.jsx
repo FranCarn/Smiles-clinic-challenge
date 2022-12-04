@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import { useLogin } from "./hooks/useLogin";
 import styles from "./login.module.css";
 export const Login = () => {
@@ -8,10 +9,24 @@ export const Login = () => {
     handleInputChange,
     email,
     password,
+    showPassword,
   } = useLogin();
 
   return (
     <div className={styles.background}>
+      <ToastContainer
+        position="top-right"
+        autoClose={2}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+        limit={3}
+      />
       <div className={styles.loginContainer}>
         <div className={styles.formContainer}>
           <h2 className={styles.clinicName}>Smiles Clinic</h2>
@@ -48,7 +63,7 @@ export const Login = () => {
                   maxLength={30}
                   minLength={7}
                 />
-                <button onClick={(e) => handleShowPassword(e)}>
+                <button onClick={() => handleShowPassword()}>
                   <i className="fa-solid fa-eye-slash" />
                 </button>
               </div>

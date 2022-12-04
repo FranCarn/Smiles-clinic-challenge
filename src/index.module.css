@@ -17,3 +17,21 @@ button:hover {
   scale: 1.03;
   transition: all 0.2s ease-in-out;
 }
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  background: none;
+}
+*::-webkit-scrollbar-track {
+  background: none;
+}
+*::-webkit-scrollbar-thumb {
+  background: #22215b;
+  border-radius: 10px;
+  overflow: hidden;
+}

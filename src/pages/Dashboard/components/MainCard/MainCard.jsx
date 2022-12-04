@@ -1,4 +1,5 @@
 import React from "react";
+import { Loader } from "../../../../components/Loader";
 import { CardModal } from "./CardModal/CardModal";
 import { Gradient } from "./Gradient";
 import styles from "./mainCard.module.css";
@@ -20,7 +21,7 @@ export const MainCard = ({ title, listTitle, buttonText, list }) => {
       </div>
       <div className={styles.mainCardInfoContainer}>
         {list?.map((item) => (
-          <div className={styles.mainCardInfo}>
+          <div key={item.name} className={styles.mainCardInfo}>
             <span>{item.name}</span>
             <span>{item.created}</span>
           </div>

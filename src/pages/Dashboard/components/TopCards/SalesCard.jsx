@@ -8,7 +8,7 @@ export const SalesCard = () => {
         <div className={styles.cardTitle}>2.300</div>
         <div>On going sales</div>
       </div>
-      <div>
+      <div className={styles.rightIcons}>
         <i className="fa-solid fa-arrow-up fa-xl" />
         <div>+90%</div>
       </div>

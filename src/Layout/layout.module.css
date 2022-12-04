@@ -1,17 +1,19 @@
 .layoutContainer {
   height: 100vh;
   background: #fafafa;
+  display: flex;
+  width: auto;
 }
 
 .layout {
   margin: auto;
   background: #fafafa;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
+  width: 95%;
 }
 
-.layoutContainer {
-  display: flex;
-}
-.layout {
-  width: 90%;
+@media screen and (min-width: 700px) {
+  .layout {
+    width: 85%;
+  }
 }

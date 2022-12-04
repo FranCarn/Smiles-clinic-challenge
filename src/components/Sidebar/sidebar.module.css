@@ -1,25 +1,7 @@
 .sidebarContainer {
-  width: 7rem;
-  padding: 3rem 0;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.2s;
-  -webkit-box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
-  -moz-box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
-  box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
+  display: none;
 }
-.sidebarContainer button {
-  background: none;
-}
-.sidebarOpen {
-  padding: 3rem 1rem;
-  align-items: flex-end;
-  width: 15rem;
-  transition: all 0.2s;
-}
+
 .showlogoutText {
   display: none;
 }
@@ -28,13 +10,17 @@
   .sidebarContainer {
     position: fixed;
     height: 100%;
-    width: 5rem;
+    width: 7rem;
     padding: 3rem 0;
     background: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.2s;
+    -webkit-box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
+    box-shadow: 11px -1px 33px -20px rgba(0, 0, 0, 0.73);
   }
   .sidebarOpen {
     padding: 3rem 1rem;

@@ -8,7 +8,7 @@ export const UsersCard = ({ totalUsers = 0 }) => {
         <div className={styles.cardTitle}>{totalUsers}</div>
         <div>New users</div>
       </div>
-      <div>
+      <div className={styles.rightIcons}>
         <i
           className={`fa-solid fa-arrow-right fa-xl ${styles.cardArrowUser}`}
         />

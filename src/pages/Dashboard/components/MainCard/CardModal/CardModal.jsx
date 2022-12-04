@@ -21,7 +21,7 @@ export const CardModal = ({ buttonText, title }) => {
       <div>
         <ToastContainer
           position="top-right"
-          autoClose={11}
+          autoClose={2}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -49,21 +49,11 @@ export const CardModal = ({ buttonText, title }) => {
             </button>
           </div>
           <div className={styles.modalBody}>
-            {modalTitle === "User" ? <UserModal /> : <RoleModal />}
-          </div>
-          <div className={styles.modalButtonGroup}>
-            <button
-              className={styles.modalCancelButton}
-              onClick={() => handleCancel()}
-            >
-              Cancel
-            </button>
-            <button
-              className={styles.modalSaveButton}
-              onClick={() => handleSave()}
-            >
-              Save
-            </button>
+            {modalTitle === "User" ? (
+              <UserModal handleCancel={handleCancel} handleSave={handleSave} />
+            ) : (
+              <RoleModal handleCancel={handleCancel} handleSave={handleSave} />
+            )}
           </div>
         </Modal>
       </div>

@@ -39,17 +39,28 @@
   height: 3rem;
   border-radius: 100%;
 }
+.titleContainer h1 {
+  font-size: 1.5rem;
+}
+.titleContainer h3 {
+  font-size: 0.7rem;
+}
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
+.profilePictureContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
 @media screen and (min-width: 700px) {
-  .profileContainer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  .titleContainer h1 {
+    font-size: 2.5rem;
   }
-
-  .profilePictureContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+  .titleContainer h3 {
+    font-size: 1rem;
   }
 }
