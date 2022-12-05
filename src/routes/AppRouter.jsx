@@ -3,7 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "../auth/context/AuthProvider";
-import { Layout } from "../Layout/layout";
+import { Layout } from "../layout/layout";
+
 import { Dashboard } from "../pages/Dashboard/Dashboard";
 import { Login } from "../pages/Login/Login";
 import { PrivateRoutes, PublicRoutes } from "./";
