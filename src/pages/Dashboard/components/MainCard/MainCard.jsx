@@ -1,17 +1,12 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { CreateRole } from "../../../../modals/CreateRole";
 import { CreateUser } from "../../../../modals/CreateUser";
 import { Gradient } from "./Gradient";
 import styles from "./mainCard.module.css";
 
-export const MainCard = ({
-  title,
-  listTitle,
-  list,
-  getData,
-  roleList,
-  type,
-}) => {
+export const MainCard = (props) => {
+  const { title, listTitle, list, getData, roleList, type } = props;
   const [isCreating, setIsCreating] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   return (
@@ -61,4 +56,8 @@ export const MainCard = ({
       </div>
     </div>
   );
+};
+
+MainCard.propTypes = {
+  props: PropTypes.object,
 };

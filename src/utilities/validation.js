@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const validateUser = (userInfo) => {
   if (!userInfo.BIRTHDATE) return true;
   if (!userInfo.COUNTRY) return true;
@@ -12,4 +14,11 @@ export const validateRole = (roleInfo) => {
   if (!roleInfo.ENGLISHROLE) return true;
   if (!roleInfo.SPANISHROLE) return true;
   return false;
+};
+
+validateUser.propTypes = {
+  userInfo: PropTypes.object.isRequired,
+};
+validateRole.propTypes = {
+  roleInfo: PropTypes.object.isRequired,
 };

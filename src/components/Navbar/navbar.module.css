@@ -26,6 +26,7 @@
 
 .profilePicture {
   background: #d414d4;
+  z-index: 1;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 100%;
@@ -38,10 +39,39 @@
 }
 
 .profilePictureContainer {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.3rem;
 }
+
+.profileDropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #ffffff;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 15px;
+  top: 2rem;
+  right: 0;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.profileDropdown div > * {
+  margin: 0.3rem 0.5rem;
+}
+.profileDropdown div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.showDropdown {
+  display: none;
+}
+
 @media screen and (min-width: 700px) {
   .titleContainer {
     display: block;
@@ -59,5 +89,29 @@
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
+  }
+  .profileDropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #ffffff;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 15px;
+    top: 4rem;
+    right: 0;
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .profileDropdown div:hover {
+    scale: 1.02;
+  }
+  .profileDropdown div {
+    padding: 0.2rem 0.8rem;
+  }
+  .showDropdown {
+    display: none;
   }
 }

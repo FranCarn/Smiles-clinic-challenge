@@ -9,8 +9,8 @@ export const SalesCard = () => {
         <div>On going sales</div>
       </div>
       <div className={styles.rightIcons}>
-        <i className="fa-solid fa-arrow-up fa-xl" />
-        <div>+90%</div>
+        <i className={`fa-solid fa-arrow-up fa-xl ${styles.saleArrow}`} />
+        <div className={styles.saleNumberBox}>+90%</div>
       </div>
     </div>
   );

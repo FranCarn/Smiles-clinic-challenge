@@ -9,6 +9,7 @@
 .sidebarOpen {
   width: 90vw;
   transition: all 0.2s;
+  z-index: 10;
   height: 100%;
   position: fixed;
   padding: 3rem 0;

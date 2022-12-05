@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 
 export const toastSuccess = (title) => {
   toast.success(`${title} saved!`, {
@@ -26,4 +27,11 @@ export const toastError = (text) => {
     theme: "colored",
     closeButton: false,
   });
+};
+
+toastSuccess.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+toastError.propTypes = {
+  title: PropTypes.string.isRequired,
 };

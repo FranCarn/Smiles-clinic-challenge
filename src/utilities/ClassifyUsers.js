@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const classifyUsers = (list) => {
   const dentistsList = list.filter((user) => user.SELECTROLES === "DENTIST");
 
@@ -8,4 +10,8 @@ export const classifyUsers = (list) => {
   });
 
   return { dentistsList, usersList };
+};
+
+classifyUsers.propTypes = {
+  list: PropTypes.array.isRequired,
 };

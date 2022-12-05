@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import styles from "./cardModal.module.css";
 import moment from "moment";
+import PropTypes from "prop-types";
 import { saveNewRole } from "../services/api";
 import { toastError, toastSuccess } from "../utilities/toast";
 import { customStyles } from "../utilities/modalCustomStyles";
 import { validateRole } from "../utilities/validation";
+import styles from "./cardModal.module.css";
 
 export const CreateRole = ({ getData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,6 +29,7 @@ export const CreateRole = ({ getData }) => {
   };
 
   const handleCancel = () => {
+    setIsModalOpen(!isModalOpen);
     toastError("Role creation canceled...");
   };
 
@@ -94,4 +96,8 @@ export const CreateRole = ({ getData }) => {
       </Modal>
     </div>
   );
+};
+
+CreateRole.propTypes = {
+  getData: PropTypes.func.isRequired,
 };

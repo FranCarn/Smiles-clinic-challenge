@@ -1,4 +1,5 @@
 import axios from "axios";
+import PropTypes from "prop-types";
 
 export const validLogin = async ({ email, password }) => {
   try {
@@ -10,7 +11,7 @@ export const validLogin = async ({ email, password }) => {
     );
     return checkUser;
   } catch (err) {
-    return;
+    console.log(err);
   }
 };
 
@@ -66,4 +67,19 @@ export const getWeather = async (lat, lon) => {
   } catch (error) {
     return null;
   }
+};
+
+validLogin.propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+};
+saveNewUser.propTypes = {
+  userInfo: PropTypes.object.isRequired,
+};
+saveNewRole.propTypes = {
+  roleInfo: PropTypes.object.isRequired,
+};
+getWeather.propTypes = {
+  lat: PropTypes.string.isRequired,
+  lon: PropTypes.string.isRequired,
 };

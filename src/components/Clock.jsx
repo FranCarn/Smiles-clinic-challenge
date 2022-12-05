@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import { Loader } from "./Loader";
+import PropTypes from "prop-types";
 export const Clock = ({ style }) => {
   const [clockState, setClockState] = useState(null);
   useEffect(() => {
@@ -11,4 +12,8 @@ export const Clock = ({ style }) => {
   }, []);
   if (!clockState) return <Loader width={20} />;
   return <div className={style}>{clockState}</div>;
+};
+
+Clock.propTypes = {
+  style: PropTypes.string.isRequired,
 };

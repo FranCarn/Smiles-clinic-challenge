@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Modal from "react-modal";
+import PropTypes from "prop-types";
 import { toastError, toastSuccess } from "../utilities/toast";
 import { customStyles } from "../utilities/modalCustomStyles";
-import styles from "./cardModal.module.css";
 import { saveNewUser } from "../services/api";
 import { validateUser } from "../utilities/validation";
+import styles from "./cardModal.module.css";
 
 export const CreateUser = ({ getData, roleList }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -152,4 +153,8 @@ export const CreateUser = ({ getData, roleList }) => {
       </Modal>
     </div>
   );
+};
+CreateUser.propTypes = {
+  getData: PropTypes.func.isRequired,
+  roleList: PropTypes.array.isRequired,
 };

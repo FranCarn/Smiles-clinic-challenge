@@ -23,8 +23,8 @@ export const useLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await validLogin(formState);
-    if (res) return login(res[0]._id, res[0].SELECTROLES);
-    toast.error("Usuario o contraseña incorrecta");
+    if (res.length) return login(res[0]._id, res[0].SELECTROLES);
+    return toast.error("Usuario o contraseña incorrecta");
   };
 
   return {
