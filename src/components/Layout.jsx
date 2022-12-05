@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../components/Navbar/Navbar";
+import { Navbar } from "./Navbar/Navbar";
 import styles from "./layout.module.css";
 
 export const Layout = ({ children }) => {

@@ -73,21 +73,17 @@
 }
 
 .mainCardAddButton {
-  position: relative;
   display: flex;
   justify-content: flex-end;
 }
 
 .mainCardAddButton button {
-  right: 0;
-  top: 0;
   color: #fff;
   margin: 1rem 2rem;
   background: #22215b;
   height: 2rem;
   width: 5rem;
   border-radius: 10px;
-  position: absolute;
 }
 .mainCardAddButton button span {
   font-size: 0.85rem;
