@@ -7,7 +7,7 @@
   margin: auto;
   background: #fafafa;
   padding: 1rem 0.5rem;
-  width: 95%;
+  max-width: 1300px;
   min-height: 100vh;
 }
 
